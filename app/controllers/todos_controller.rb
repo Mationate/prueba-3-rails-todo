@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[show]
+  before_action :set_todo, only: %i[show edit update]
 
   def index
     @todos = Todo.all
@@ -22,6 +22,16 @@ class TodosController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @todo.update(todo_params)
+      redirect_to root_path, notice: 'La tarea se actualizó con éxito !'
+    else
+      redirect_to root_path, alert: 'La tarea no se guardó, intenta denuevo'
+    end
+  end
   
   
   

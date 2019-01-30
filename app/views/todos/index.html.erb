@@ -11,9 +11,10 @@
   <% @todos.each do |todo| %>
     <li class="list-group-item"> 
       <%= todo.description %> 
-      <%= link_to "Ver", todo_path(todo), class:"btn btn-primary" %> 
+      <%= link_to "Ver", todo_path(todo), class:"btn btn-info" %> 
+      <%= link_to "Editar", edit_todo_path(todo), class:"btn btn-success" %> 
     </li>
   <% end %>  
 </ul>
 <br>
-<%= link_to 'Crear una tarea', todos_new_path, class:"btn btn-success" %> 
+<%= link_to 'Crear una tarea', todos_new_path, class:"btn btn-primary" %> 

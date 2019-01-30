@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[show edit update]
+  before_action :set_todo, only: %i[show edit update destroy complete]
 
   def index
     @todos = Todo.all
@@ -32,6 +32,22 @@ class TodosController < ApplicationController
       redirect_to root_path, alert: 'La tarea no se guardó, intenta denuevo'
     end
   end
+
+  def destroy
+    @todo.destroy
+    redirect_to root_path, notice: 'Se eliminó la tarea con éxito'
+  end
+
+  def complete
+    @todo.completed = true
+    @todo.save
+    redirect_to root_path, notice: 'Has terminado tu tarea ! '
+  end
+
+  
+  
+  
+  
   
   
   

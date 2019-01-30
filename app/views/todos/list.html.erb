@@ -1,0 +1,34 @@
+
+
+
+
+  <div class="row">
+    <div class="col-6">
+      <h2>Tareas sin completar</h2>
+    </div>
+    <div class="col-6">
+      <h2>Tareas completadas</h2>
+    </div>
+  
+  </div>
+
+
+
+<div class="row">
+  <div class="col-6">
+    <% @uncompleted_todos.each do |todo| %>
+       <li class="list-group-item">
+         <%= todo.description %>
+       </li> 
+    <% end %>
+  </div> 
+  
+  <div class="col-6">
+    <% @completed_todos.each do |todo| %>
+      <li class="list-group-item">
+        <%= todo.description %>
+      </li> 
+    <% end %>
+  </div> 
+  
+</div>

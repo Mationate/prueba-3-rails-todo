@@ -44,22 +44,17 @@ class TodosController < ApplicationController
     redirect_to root_path, notice: 'Has terminado tu tarea ! '
   end
 
+  def list
+    @todos = Todo.all
+    @completed_todos = @todos.where('completed = ?', true)
+    @uncompleted_todos = @todos.where('completed = ?', false)
+  end
   
-  
-  
-  
-  
-  
-  
-  
-
   private
 
   def set_todo
     @todo = Todo.find(params[:id])
   end
-  
-
   def todo_params
     params.require(:todo).permit(:description, :completed)
   end

@@ -1,4 +1,4 @@
-<h2>Index !</h2>
+<h2>ToDo App !</h2>
 
 <% if notice.present? %>
   <%= notice %>
@@ -16,11 +16,11 @@
         <%= link_to "Ver", todo_path(todo), class:"btn btn-info" %> 
         <%= link_to "Editar", edit_todo_path(todo), class:"btn btn-success" %> 
         <%= link_to "Eliminar", todo_path(todo), class:"btn btn-danger", data: {confirm: 'Estas seguro?', method: :delete} %> 
-        <%= link_to "Completar", complete_path(todo), class:"btn btn-warning" %> 
+        <%= link_to "Completar", complete_path(todo), class:"btn btn-warning", method: :patch %> 
       </div>
     </li>
   <% end %>  
 </ul>
 <br>
-<%= link_to 'Crear una tarea', todos_new_path, class:"btn btn-primary" %> 
+<%= link_to '+', todos_new_path, class:"btn btn-primary" %> 
 

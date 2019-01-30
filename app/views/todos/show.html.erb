@@ -1,0 +1,11 @@
+<h2>Show !</h2>
+
+
+<h4>Tarea:</h4>
+<p><%= @todo.description %></p> <br>
+<h4>Estado</h4>
+<% if @todo.completed == true %>
+  <p>Tu tarea está completada !</p>
+<% else %>
+  <p>Tu tarea aún no está completada !</p>
+<% end %>
